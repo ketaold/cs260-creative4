@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+    <title>MyInterest</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>MyInterest</h1>
+            <h2>Your Own Pinterest</h2>
+            <p>To add, click <a href="add.html">here</a></p>
+        </div>
+    </div>
+    <div id="app" class="content">
+        <section class="all-items">
+            <div class="display" v-for="item in items">
+                <a :href="item.link">
+                    <img :src="item.path" />
+                </a>
+                <p>{{item.text}}</p>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+</body>
+
+<footer>
+    <p class="center">My GitHub Repository: <a href="https://github.com/BYU-CS-260-Winter-2019/lab-4-ketaold">Lab 4</a></p>
+</footer>
+
+</html>

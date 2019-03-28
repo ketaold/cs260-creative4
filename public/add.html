@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles.css" />
+    <title>MyInterest</title>
+</head>
+
+<body>
+    <div id="admin" class="content">
+        <h1>MyInterest</h1>
+        <h2>Add a Link</h2>
+        <div class="add">
+            <div class="form">
+                <input type="file" name="image" @change="imageAdded">
+                <p></p>
+                <textarea v-model="link" placeholder="www.yourlink.com"></textarea>
+                <textarea v-model="yourText" placeholder="Why did you pin this?"></textarea>
+                <p></p>
+                <button @click="upload">Upload</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script src="/add.js"></script>
+</body>
+<footer>
+    <p class="center">My GitHub Repository: <a href="https://github.com/BYU-CS-260-Winter-2019/lab-4-ketaold">Lab 4</a></p>
+</footer>
+
+</html>
