@@ -12,11 +12,12 @@ var app = new Vue({
         this.getItems();
     },
     methods: {
-        fileChanged(event) {
+        imageAdded(event) {
             this.file = event.target.files[0]
         },
         async upload() {
             try {
+                console.log(this.link);
                 const formData = new FormData();
                 formData.append('photo', this.file, this.file.name)
                 let r1 = await axios.post('/api/photos', formData);

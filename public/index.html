@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css" />
     <title>MyInterest</title>
 </head>
@@ -13,15 +13,21 @@
             <h1>MyInterest</h1>
             <h2>Your Own Pinterest</h2>
             <p>To add, click <a href="add.html">here</a></p>
+            <p>To delete, select item by clicking on description, then select Delete Selected Pin at the top of the page</p>
         </div>
     </div>
     <div id="app" class="content">
+        <div class="delete" v-if="findItem">
+            <div class="form">
+                <button @click="deleteItem">Delete Selected Pin</button>
+            </div>
+        </div>
         <section class="all-items">
             <div class="display" v-for="item in items">
                 <a :href="item.link">
                     <img :src="item.path" />
                 </a>
-                <p>{{item.text}}</p>
+                <p @click="selectItem(item)">{{item.description}}</p>
             </div>
         </section>
     </div>
