@@ -3,6 +3,14 @@ body {
     background: #f3f3f0;
     padding: 0px;
     margin: 0px;
+    padding-bottom: 5%;
+    position: relative;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
 }
 
 /* Header */
