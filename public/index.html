@@ -13,15 +13,23 @@
             <h1>MyInterest</h1>
             <h2>Your Own Pinterest</h2>
             <p>To add, click <a href="add.html">here</a></p>
-            <p>To delete, select item by clicking on description, then select Delete Selected Pin at the top of the page</p>
+            <p>To delete or change link, select item by clicking on description, then use the options that appear at the top of the page</p>
         </div>
     </div>
     <div id="app" class="content">
         <div class="delete" v-if="findItem">
             <div class="form">
                 <button @click="deleteItem">Delete Selected Pin</button>
+                <p></p>
+                <textarea v-model="link" placeholder="Update Link"></textarea>
+                <p></p>
+                <button @click="updateLink">Update</button>
+            </div>
+            <div class="form">
+
             </div>
         </div>
+        <p></p>
         <section class="all-items">
             <div class="display" v-for="item in items">
                 <a :href="item.link">

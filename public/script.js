@@ -2,7 +2,9 @@ var app = new Vue({
     el: '#app',
     data: {
         items: [],
+        link: "",
         findItem: "",
+
     },
     created() {
         this.getItems();
@@ -30,5 +32,22 @@ var app = new Vue({
                 console.log(error);
             }
         },
+        async updateLink() {
+            console.log("in update link");
+            try {
+                let response = await axios.put("/api/items/" + this.findItem._id, {
+                    title: this.findItem.title,
+                    description: this.findItem.description,
+                    link: this.link,
+
+                });
+                this.findItem = null;
+                this.link = null;
+                this.getItems();
+                return true;
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
 });
